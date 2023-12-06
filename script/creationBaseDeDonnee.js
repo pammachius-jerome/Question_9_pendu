@@ -8,4 +8,4 @@ let chaineMotsModifier = chaineMots.replaceAll (/[,]/g, "");
 let tableau =  chaineMotsModifier.split(" ");
 
 // console.log(tableau);
-console.log(tableau.length)
+// console.log(tableau.length)
