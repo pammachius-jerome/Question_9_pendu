@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/logo_pampam.ico">
     <meta name="author" content="Pammachius Jérôme">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
-        defer></script>
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"
+    defer></script>
     <script src="script/creationBaseDeDonnee.js" defer></script>
     <script src="script/script.js" defer></script>
     <link rel="stylesheet" href="style/style.css">
+    <link rel="icon" href="images/logo_pampam.ico">
 
     <title>Jeu du pendu</title>
 </head>
@@ -59,41 +59,41 @@
                     </div>
                     <div class="row mt-3">
                         <div class="btn-group-lg" role="group" aria-label="Basic checkbox toggle button group">
-                            <input type="checkbox" class="btn-check" id="k" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="k" autocomplete="off" value="k">
                             <label for="k" class="btn btn-outline-primary">K</label>
-                            <input type="checkbox" class="btn-check" id="l" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="l" autocomplete="off" value="l">
                             <label for="l" class="btn btn-outline-primary">L</label>
-                            <input type="checkbox" class="btn-check" id="m" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="m" autocomplete="off" value="m">
                             <label for="m" class="btn btn-outline-primary">M</label>
-                            <input type="checkbox" class="btn-check" id="n" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="n" autocomplete="off" value="n">
                             <label for="n" class="btn btn-outline-primary">N</label>
-                            <input type="checkbox" class="btn-check" id="o" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="o" autocomplete="off" value="o">
                             <label for="o" class="btn btn-outline-primary">O</label>
-                            <input type="checkbox" class="btn-check" id="p" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="p" autocomplete="off" value="p">
                             <label for="p" class="btn btn-outline-primary">P</label>
-                            <input type="checkbox" class="btn-check" id="q" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="q" autocomplete="off" value="q">
                             <label for="q" class="btn btn-outline-primary">Q</label>
-                            <input type="checkbox" class="btn-check" id="r" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="r" autocomplete="off" value="r">
                             <label for="r" class="btn btn-outline-primary">R</label>
-                            <input type="checkbox" class="btn-check" id="s" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="s" autocomplete="off" value="s">
                             <label for="s" class="btn btn-outline-primary">S</label>
-                            <input type="checkbox" class="btn-check" id="t" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="t" autocomplete="off" value="t">
                             <label for="t" class="btn btn-outline-primary">T</label>
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="btn-group-lg" role="group" aria-label="Basic checkbox toggle button group">
-                            <input type="checkbox" class="btn-check" id="u" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="u" autocomplete="off" value="u">
                             <label for="u" class="btn btn-outline-primary">U</label>
-                            <input type="checkbox" class="btn-check" id="v" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="v" autocomplete="off" value="v">
                             <label for="v" class="btn btn-outline-primary">V</label>
-                            <input type="checkbox" class="btn-check" id="w" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="w" autocomplete="off" value="w">
                             <label for="w" class="btn btn-outline-primary">W</label>
-                            <input type="checkbox" class="btn-check" id="x" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="x" autocomplete="off" value="x">
                             <label for="x" class="btn btn-outline-primary">X</label>
-                            <input type="checkbox" class="btn-check" id="y" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="y" autocomplete="off" value="y">
                             <label for="y" class="btn btn-outline-primary">Y</label>
-                            <input type="checkbox" class="btn-check" id="z" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="z" autocomplete="off" value="z">
                             <label for="z" class="btn btn-outline-primary">Z</label>
                         </div>
                     </div>
@@ -124,12 +124,21 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row mt-5 mb-5">
                 <div class="text-center">
                     <div id="message">
-
+                       
                     </div>
                 </div>
+            </div>
+            <div class="row">
+                <div class="text-center">
+                    <div class="btn" id="rejouer">
+
+                    </div>
+
+                </div>
+
             </div>
         </div>
 
