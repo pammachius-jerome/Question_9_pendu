@@ -1,3 +1,6 @@
+// pensez à gérer les - des mots + intégrer un bouton rejouer
+
+
 // Déclaration des variable global
 // let numeroMot;
 let message = document.getElementById("message");
@@ -6,22 +9,19 @@ let imagePendu = document.getElementById("imagePendu");
 let lettreMot;
 let motSecret;
 let motSecretNormaliser;
-// let compteurTentative = 10;
-// let lettrePropose = document.getElementsByClassName("btn-check"); 
+let compteurTentative = 10;
 let lettrePropose = document.querySelectorAll('input[type="checkbox"]');
 let tableauLettres = [];
 
-
 function lancerJeu() {
-    compteurTentative = 10;
     // création du tableau de vérification
-    for (let j = 0; j < 25; j++) {
+    for (let j = 0; j < 26; j++) {
         tableauLettres.push("");
     };
     motAleatoire();
     transformationMot(motSecret);
-    tentative(compteurTentative, tableauLettres); 
-    
+    tentative(compteurTentative, tableauLettres);
+
     console.log("mot secret " + motSecret);
     console.log("mot secret normalisé " + motSecretNormaliser);
 }
@@ -60,7 +60,7 @@ function transformationMot(motSecret) {
         for (let k in tableDeCorrespondance) {
 
             if (tableauMot[i] == k) {
-                
+
                 tableauMotNormalise[i] = tableDeCorrespondance[k];
             }
         }
@@ -70,42 +70,49 @@ function transformationMot(motSecret) {
 }
 // fonction de récupération des lettres tester
 function verification() {
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 26; i++) {
         if (lettrePropose[i].checked) {
+            for (let k = 0; k < 14; k++) {
+
+                if (motSecretNormaliser[k] != lettrePropose[i].value && tableauLettres[i] != lettrePropose[i].value) {
+                    // console.log("i= " + i);
+                    // console.log("k= " + k);
+                    // console.log("mot secret normalisé " + motSecretNormaliser[i]);
+                    // console.log("lettre proposé " + lettrePropose[i]);
+                    
+                    compteurTentative = tentative(compteurTentative);
+                    
+                }
+            }
             tableauLettres[i] = lettrePropose[i].value;
         };
+
     }
     console.log(tableauLettres);
     for (i = 0; i < 14; i++) {
-        for (let j = 0; j < 25; j++) {
+        for (let j = 0; j < 26; j++) {
             if (motSecretNormaliser[i] == tableauLettres[j]) {
                 lettreMot = document.querySelector("#lettre" + i);
                 lettreMot.innerHTML = motSecret[i];
-                // console.log("bingo!");
             }
 
         }
     }
-    resultat(compteurTentative, tableauLettres)
-    tentative(compteurTentative, tableauLettres); 
-    return tableauLettres;
+    message.innerHTML = "Il vous reste " + compteurTentative + " tentatives.";
+    resultat(compteurTentative, tableauLettres);
 };
 // compteur de tentative et message
 function tentative(compteurTentative) {
-    console.log("fonction tentative lancé");
-    console.log(compteurTentative);
     if (compteurTentative > 0) {
         compteurTentative--;
         message.innerHTML = "Il vous reste " + compteurTentative + " tentatives.";
-        console.log(compteurTentative);
     }
     return compteurTentative;
 }
-
 // fonction partie gagné et perdue
 function resultat(compteurTentative, tableauLettres) {
     if (compteurTentative == 0) {
-        message.innerHTML = "Perdue! Le mot a trouver était " + motSecret;
+        message.innerHTML = "Perdue! Le mot à trouver était " + motSecret;
     }
     if (tableauLettres == motSecretNormaliser) {
         message.innerHTML = 'Gagné! <br> <img src="images/Xnbj.gif" alt="Feux d\'artifice" class="img-thumbnail">'
